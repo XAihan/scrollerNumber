@@ -6,6 +6,10 @@ import SlidingClock02 from "./components/slidingClock0.2/index.vue";
 
 <template>
   <div>
+    <ul>
+      <li><router-link to="/scrollerNumber">滚动的数字</router-link></li>
+      <li><router-link to="/slidingClock">滚动的时钟</router-link></li>
+    </ul>
     <div>滑动的时钟</div>
     <div class="content">
       <!-- <div class="head">组件二: 滑动的时钟（基础版）</div>

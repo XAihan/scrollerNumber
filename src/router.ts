@@ -21,6 +21,14 @@ export const routes = [
       title: "滑动的时钟",
     },
   },
+  {
+    path: "/whiteSlidingClock",
+    name: "whiteSlidingClock",
+    component: () => import("./components/whiteSlidingClock/index.vue"),
+    meta: {
+      title: "滑动的时钟白天",
+    },
+  },
 ];
 
 const router = createRouter({

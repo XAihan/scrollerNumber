@@ -16,6 +16,10 @@ setInterval(() => {
 
 <template>
   <div>
+    <ul>
+      <li><router-link to="/scrollerNumber">滚动的数字</router-link></li>
+      <li><router-link to="/slidingClock">滚动的时钟</router-link></li>
+    </ul>
     <div>数字的滚动</div>
     <div class="content">
       <!-- <div class="head">组件一: 数字的滚动（基础版）</div>
@@ -34,9 +38,7 @@ setInterval(() => {
       <div class="demo-box">
         <BaseScrollerNum04 max="10" :count="start" />
       </div> -->
-      <div class="head">
-        组件一: 数字的滚动（不在隐藏，sliding-clock使用。）
-      </div>
+      <div class="head">组件一: 数字的滚动（不在隐藏，sliding-clock使用。）</div>
       <div class="demo-box">
         <BaseScrollerNum05 max="10" :count="start" />
       </div>

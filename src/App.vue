@@ -6,16 +6,18 @@
 <template>
   <div class="fn-components-container">
     <h1 class="head">这里是凤楠的组件库</h1>
-    <ul>
+    <!-- <ul>
       <li><router-link to="/scrollerNumber">滚动的数字</router-link></li>
-      <li><router-link to="/slidingClock">滚动的时钟123</router-link></li>
-    </ul>
+      <li><router-link to="/slidingClock">滚动的时钟</router-link></li>
+    </ul> -->
     <router-view></router-view>
   </div>
 </template>
 
 <style scoped lang="scss">
 .fn-components-container {
+  width: 100%;
+  height: 100vh;
   .head {
     width: 100%;
     font-size: 24px;
