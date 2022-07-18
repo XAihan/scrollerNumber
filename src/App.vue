@@ -8,7 +8,7 @@
     <h1 class="head">这里是凤楠的组件库</h1>
     <ul>
       <li><router-link to="/scrollerNumber">滚动的数字</router-link></li>
-      <li><router-link to="/slidingClock">滚动的时钟</router-link></li>
+      <li><router-link to="/slidingClock">滚动的时钟123</router-link></li>
     </ul>
     <router-view></router-view>
   </div>
