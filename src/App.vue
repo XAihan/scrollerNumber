@@ -26,6 +26,7 @@
     color: white;
     padding: 1rem 0;
     letter-spacing: 2px;
+    display: none;
   }
 }
 </style>

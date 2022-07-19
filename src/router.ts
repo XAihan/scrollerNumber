@@ -6,7 +6,7 @@ import {
 
 export const routes = [
   {
-    path: "/scrollerNumber",
+    path: "/",
     name: "scrollerNumber",
     component: () => import("./components/scrollerNumber/index.vue"),
     meta: {
