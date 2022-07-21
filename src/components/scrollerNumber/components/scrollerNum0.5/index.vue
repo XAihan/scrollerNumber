@@ -44,14 +44,14 @@ watchEffect(() => {
 	text-align: center;
 	border: 2px solid rgba(221, 221, 221, 1);
 	border-radius: 4px;
-	// overflow: hidden;
-	margin-top: 200px;
+	overflow: hidden;
+	// margin-top: 200px;
 	ul {
 		list-style-type: none;
 		overflow: hidden;
 		transform: translate(0, 0);
 		line-height: 30px;
-		transition: transform 500ms ease-in-out;
+		transition: transform 1s ease;
 	}
 }
 </style>

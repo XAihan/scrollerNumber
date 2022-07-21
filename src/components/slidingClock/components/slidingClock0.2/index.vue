@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, watchEffect, reactive } from "vue";
 import BaseScrollerNum05 from "@/components/scrollerNumber/components/scrollerNum0.5/index.vue";
-import dateUtils from "@/util.js";
+import dateUtils from "@/utils";
 let initOptions = [
   {
     max: 2,

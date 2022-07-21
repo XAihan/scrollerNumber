@@ -1,17 +1,20 @@
 <script setup lang="ts">
 import { log } from 'console';
-import { ref, onMounted, watchEffect, VueElement, watch } from 'vue';
-const props = defineProps<{ count: number | String }>();
-const numberRef = ref<VueElement>();
+import { ref, watch } from 'vue';
+const props = defineProps<{ count: number }>();
 let playing = ref<Boolean>(false);
-let prev = ref<Number>(0);
+let hiding = ref<boolean>(false);
 let numberList = ref<Number[]>([0, 1]);
 watch(
 	() => props.count,
 	(newCount, oldCount) => {
 		if (oldCount !== newCount) {
 			playing.value = false;
+			hiding.value = false;
 			numberList.value = [Number(oldCount), Number(newCount)];
+			if (newCount === 0) {
+				hiding.value = true;
+			}
 			setTimeout(() => {
 				playing.value = true;
 			}, 17);
@@ -24,7 +27,7 @@ watch(
 		<div class="content">
 			<div class="showDom">
 				<div class="slider">
-					<div v-for="(item, index) in numberList" class="slider-text" :class="{ 'slider-ani': playing }" :key="index">
+					<div v-for="(item, index) in numberList" class="slider-text" :class="{ 'slider-ani': playing, 'slider-ani-hide': hiding }" :key="index">
 						{{ item }}
 					</div>
 				</div>
@@ -35,13 +38,8 @@ watch(
 
 <style scoped lang="scss">
 .showDom {
-	margin: 0 auto;
-	width: 20px;
-	height: 30px;
-	text-align: center;
-	border: 2px solid rgba(221, 221, 221, 1);
-	border-radius: 4px;
-	// margin-top: 200px;
+	width: 100%;
+	height: 100%;
 	.slider {
 		display: flex;
 		flex-direction: column;
@@ -62,6 +60,12 @@ watch(
 		transform: translateY(-100%);
 		transition: transform 1s ease;
 	}
+
+	.slider-ani-hide {
+		transition: transform 1s ease;
+		opacity: 0;
+	}
+
 	.slider-hide {
 		opacity: 0;
 	}

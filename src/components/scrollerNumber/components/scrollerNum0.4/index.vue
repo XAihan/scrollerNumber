@@ -53,7 +53,7 @@ watchEffect(() => {
 		overflow: hidden;
 		transform: translate(0, 0);
 		line-height: 30px;
-		transition: transform 500ms ease-in-out;
+		transition: transform 1s ease;
 	}
 }
 </style>

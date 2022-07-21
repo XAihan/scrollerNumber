@@ -6,6 +6,7 @@ import BaseScrollerNum03 from './components/scrollerNum0.3/index.vue';
 import BaseScrollerNum04 from './components/scrollerNum0.4/index.vue';
 import BaseScrollerNum05 from './components/scrollerNum0.5/index.vue';
 import BaseScrollerNum06 from './components/scrollerNum0.6/index.vue';
+import BaseScrollerNum07 from './components/scrollerNum0.7/index.vue';
 let start = ref(0);
 setInterval(() => {
 	start.value++;
@@ -18,7 +19,7 @@ setInterval(() => {
 <template>
 	<div>
 		<ul>
-			<li><router-link to="/scrollerNumber">滚动的数字</router-link></li>
+			<!-- <li><router-link to="/scrollerNumber">滚动的数字</router-link></li> -->
 			<li><router-link to="/slidingClock">滚动的时钟</router-link></li>
 		</ul>
 		<div>数字的滚动</div>
@@ -42,6 +43,10 @@ setInterval(() => {
 				<BaseScrollerNum05 :max="10" :count="start" />
 			</div>
 			<div class="head">组件一: 数字的滚动（两个数字的滚动）</div>
+			<div class="demo-box">
+				<BaseScrollerNum06 :count="start" />
+			</div>
+			<div class="head">组件一: 数字的滚动（两个数字的滚动--支持逆向滚动）</div>
 			<div class="demo-box">
 				<BaseScrollerNum06 :count="start" />
 			</div>

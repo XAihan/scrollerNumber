@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
 import  SlidingClock from "./components/slidingClock/index.vue";
 </script>
 
