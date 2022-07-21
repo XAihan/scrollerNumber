@@ -3,7 +3,7 @@ import { ref, watchEffect, VueElement } from 'vue';
 import TwoNumberScroller from '../scrollerNum-towNumber/index.vue';
 const props = defineProps<{ max: number; count: number }>();
 const numberRef = ref<VueElement>();
-const singleScrollProcess = 100 / props.max; // 单次移动的空间百分比
+const singleScrollProcess = 30; // 单次移动的空间百分比
 let defaultScrollProcess = singleScrollProcess * props.count;
 let numberList = [];
 for (let i = 0; i < props.max; i++) {
@@ -12,13 +12,13 @@ for (let i = 0; i < props.max; i++) {
 const List = ref<Array<number>>(numberList);
 
 if (numberRef.value) {
-	numberRef.value.style.transform = `translate(0,-${defaultScrollProcess}%)`;
+	numberRef.value.style.transform = `translate(0,-${defaultScrollProcess}px)`;
 }
 
 watchEffect(() => {
 	defaultScrollProcess = singleScrollProcess * props.count;
 	if (numberRef.value) {
-		numberRef.value.style.transform = `translate(0,-${defaultScrollProcess}%)`;
+		numberRef.value.style.transform = `translate(0,-${defaultScrollProcess}px)`;
 	}
 });
 </script>
@@ -51,7 +51,6 @@ watchEffect(() => {
 	border-radius: 4px;
 	margin-top: 200px;
 	background: #e1e6f3;
-	// background: red;
 	border-radius: 100%;
 	margin: 0 2px;
 	.trueNum {
@@ -83,24 +82,4 @@ watchEffect(() => {
 	}
 }
 
-@keyframes scrollerTopShow {
-	from {
-		font-size: 100;
-		transform: scale(1) translateY(30px);
-	}
-	to {
-		font-size: 600;
-		transform: scale(1.2);
-	}
-}
-@keyframes scrollerTopHide {
-	from {
-		font-size: 600;
-		transform: scale(1.2);
-	}
-	to {
-		font-size: 100;
-		transform: scale(1) translateY(-30px);
-	}
-}
 </style>

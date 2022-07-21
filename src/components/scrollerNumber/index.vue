@@ -46,7 +46,7 @@ setInterval(() => {
 			<div class="demo-box">
 				<BaseScrollerNum06 :count="start" />
 			</div>
-			<div class="head">组件一: 数字的滚动（两个数字的滚动--支持逆向滚动）</div>
+			<div class="head">组件一: 数字的滚动（两个数字的滚动--更精准的时间控制）</div>
 			<div class="demo-box">
 				<BaseScrollerNum06 :count="start" />
 			</div>

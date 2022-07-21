@@ -10,10 +10,12 @@ watch(
 	(newCount, oldCount) => {
 		if (oldCount !== newCount) {
 			playing.value = false;
-			hiding.value = false;
 			numberList.value = [Number(oldCount), Number(newCount)];
 			if (newCount === 0) {
 				hiding.value = true;
+				setTimeout(() => {
+					hiding.value = false;
+				}, 1000);
 			}
 			setTimeout(() => {
 				playing.value = true;
