@@ -37,9 +37,20 @@ function getTimeOptions() {
 	}
 }
 
-setInterval(() => {
+function getDate() {
+	console.log('调用了时间');
 	getTimeOptions();
-}, 1000);
+	setTimeout(() => {
+		getDate();
+	}, 1000);
+}
+
+getDate();
+
+// 如果使用interval的话，会出现切换tab动画暂停，回来之后暂停期间的动画一次性全部运行。解决方案是使用settimeout来实现setinterval
+// setInterval(() => {
+// 	getTimeOptions();
+// }, 1000);
 </script>
 
 <template>
