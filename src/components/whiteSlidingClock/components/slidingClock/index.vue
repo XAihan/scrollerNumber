@@ -38,7 +38,6 @@ function getTimeOptions() {
 }
 
 function getDate() {
-	console.log('调用了时间');
 	getTimeOptions();
 	setTimeout(() => {
 		getDate();

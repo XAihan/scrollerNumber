@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import { log } from 'console';
 import { ref, watch } from 'vue';
 const props = defineProps<{ count: number }>();
 let playing = ref<Boolean>(false);
 let hiding = ref<boolean>(false);
-let numberList = ref<Number[]>([0, 1]);
+let numberList = ref<Number[]>([props.count, props.count]);
+
 watch(
 	() => props.count,
 	(newCount, oldCount) => {
 		if (oldCount !== newCount) {
 			playing.value = false;
 			numberList.value = [Number(oldCount), Number(newCount)];
+			// 如果数字等于0的话，需要暂时隐藏这个滚动，等待长条数字回滚。
 			if (newCount === 0) {
 				hiding.value = true;
 				setTimeout(() => {
