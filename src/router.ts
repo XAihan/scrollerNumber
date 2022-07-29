@@ -6,7 +6,7 @@ import {
 
 export const routes = [
   {
-    path: "/",
+    path: "/scrollerNumber",
     name: "scrollerNumber",
     component: () => import("./components/scrollerNumber/index.vue"),
     meta: {
@@ -22,7 +22,7 @@ export const routes = [
     },
   },
   {
-    path: "/whiteSlidingClock",
+    path: "/",
     name: "whiteSlidingClock",
     component: () => import("./components/whiteSlidingClock/index.vue"),
     meta: {
