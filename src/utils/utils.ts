@@ -60,6 +60,35 @@ const dateUtil = {
       return value || 0;
     });
     return time_str;
+  },
+
+
+
+  /**
+   *
+   * @param {number} interval  执行间隔，默认1s
+   * @param {function} cb 间隔结束后执行的方法
+   * @param {function} cancelCb 判断什么时候结束,返回值是布尔值，返回true则终止。
+   */
+  mySetInterval(cb: Function, cancelCb?: Function, afterCancelCb?: Function, interval = 1000) {
+    let timer = null;
+    let pre: any = new Date();
+    let fn = function () {
+      timer = requestAnimationFrame(() => {
+        let cur: any = new Date();
+        if (cur - pre >= interval) {
+          console.log(cur - pre);
+          cb();
+          pre = cur;
+        }
+        timer = requestAnimationFrame(fn);
+        if (cancelCb && cancelCb()) {
+          afterCancelCb && afterCancelCb();
+          timer && cancelAnimationFrame(timer);
+        }
+      });
+    };
+    fn();
   }
 };
 

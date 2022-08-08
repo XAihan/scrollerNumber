@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, watchEffect, reactive } from 'vue';
 import BaseScrollerNum from '../scrollerNum/index.vue';
-import dateUtils from '@/utils';
+import dateUtils from '@/utils/utils';
 let initOptions = [
 	{
 		max: 2,
@@ -37,14 +37,18 @@ function getTimeOptions() {
 	}
 }
 
-function getDate() {
+dateUtils.mySetInterval(() => {
 	getTimeOptions();
-	setTimeout(() => {
-		getDate();
-	}, 1000);
-}
+});
 
-getDate();
+// setTimeout的方法
+// function getDate() {
+// 	getTimeOptions();
+// 	setTimeout(() => {
+// 		getDate();
+// 	}, 1000);
+// }
+// getDate();
 
 // 如果使用interval的话，会出现切换tab动画暂停，回来之后暂停期间的动画一次性全部运行。解决方案是使用settimeout来实现setinterval
 // setInterval(() => {
