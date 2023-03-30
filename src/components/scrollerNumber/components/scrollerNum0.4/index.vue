@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { log } from 'console';
 import { ref, onMounted, watchEffect, VueElement } from 'vue';
 const props = defineProps<{ max: number; count: number }>();
 const numberRef = ref<VueElement>();
