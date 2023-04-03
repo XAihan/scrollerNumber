@@ -1,7 +1,7 @@
 import {
   createRouter,
-  // createWebHashHistory,
-  createWebHistory,
+  createWebHashHistory,
+  // createWebHistory,
 } from "vue-router";
 
 export const routes = [
@@ -34,7 +34,8 @@ export const routes = [
 const router = createRouter({
   // hash模式：createWebHashHistory，
   // history模式：createWebHistory
-  history: createWebHistory(),
+  // history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 
