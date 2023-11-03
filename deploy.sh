@@ -16,7 +16,7 @@ git push
 git subtree push --prefix dist origin gh-pages
 
 # 如果你要部署在 https://<USERNAME>.github.io
-git push -f git@github.com:XAihan/XAihan.github.io.git main
+git push -f git@github.com:XAihan/XAihan.github.io.git master
 
 # 如果你要部署在 https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:<USERNAME>/<REPO>.git main:gh-pages
